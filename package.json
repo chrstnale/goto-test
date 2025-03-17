@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10"
+  }
+}
