@@ -10,7 +10,7 @@ const bank = new Bank(0)
 
 function main() {
 
-    rl.question('$ What would you like to do? \n1. Deposit\n2. Withdraw\n3. Check balance\n4. Exit\n => ', (line) => {
+    rl.question('$ What would you like to do? \n1. Credit\n2. Debit\n3. Check balance\n4. Exit\n => ', (line) => {
         if(line === '1') {
             rl.question('$ Enter Amount: ', (line) => {
                 try {
