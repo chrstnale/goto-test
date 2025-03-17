@@ -6,34 +6,33 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 
-let inputs: string[] = []
 const bank = new Bank(0)
 
 function main() {
 
-    rl.question('Select an option: \n1. Deposit\n2. Withdraw\n3. Check balance\n4. Exit\n => ', (line) => {
+    rl.question('$ What would you like to do? \n1. Deposit\n2. Withdraw\n3. Check balance\n4. Exit\n => ', (line) => {
         if(line === '1') {
-            rl.question('Enter Amount: ', (line) => {
+            rl.question('$ Enter Amount: ', (line) => {
                 bank.deposit(line)
                 console.log('Successful!')
                 main()
             })
         } else if(line === '2') {
-            rl.question('Enter Amount: ', (line) => {
+            rl.question('$ Enter Amount: ', (line) => {
                 bank.withdraw(line)
-                console.log('Successful!')
+                console.log('$ Done!')
                 main()
             })
         } else if(line === '3') {
             const balance = bank.getStringBalance()
-            console.log('Current balance is ', balance)
+            console.log('$ Current balance is ', balance)
             main()
         } else if(line === '4') {
-            console.log('Thank you!')
+            console.log('$ Thank you!')
             rl.close()
             process.exit(0)
         } else {
-            console.log('Invalid option! Please try again.')
+            console.log('$ Invalid option! Please try again.')
             main()
         }
     })
