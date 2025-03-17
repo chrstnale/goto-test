@@ -13,15 +13,25 @@ function main() {
     rl.question('$ What would you like to do? \n1. Deposit\n2. Withdraw\n3. Check balance\n4. Exit\n => ', (line) => {
         if(line === '1') {
             rl.question('$ Enter Amount: ', (line) => {
-                bank.deposit(line)
-                console.log('Successful!')
-                main()
+                try {
+                    bank.deposit(line)
+                    console.log('Successful!')
+                    main()
+                } catch(error: any) {
+                    console.log(error.message)
+                    main()
+                }
             })
         } else if(line === '2') {
             rl.question('$ Enter Amount: ', (line) => {
-                bank.withdraw(line)
-                console.log('$ Done!')
-                main()
+                try {
+                    bank.withdraw(line)
+                    console.log('$ Done!')
+                    main()
+                } catch(error: any) {
+                    console.log(error.message)
+                    main()
+                }
             })
         } else if(line === '3') {
             const balance = bank.getStringBalance()
